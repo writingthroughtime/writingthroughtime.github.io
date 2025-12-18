@@ -16,6 +16,7 @@ const el = {
   subjectsList: document.getElementById("subjectsList"),
 
   jsonHint: document.getElementById("jsonHint"),
+  jsonTree: document.getElementById("jsonTree"),
   jsonPre: document.getElementById("jsonPre"),
   copyJsonBtn: document.getElementById("copyJsonBtn"),
   clearJsonBtn: document.getElementById("clearJsonBtn"),
@@ -86,8 +87,25 @@ function prettyJson(obj) {
 
 function setJsonBox(obj, hintText = "") {
   currentJsonText = obj ? prettyJson(obj) : "";
+
+  // Source of truth for copying
   el.jsonPre.textContent = currentJsonText;
-  el.jsonHint.textContent = hintText || "Click a session to load its raw JSON here.";
+
+  // Render collapsible tree
+  el.jsonTree.innerHTML = "";
+  if (obj) {
+    // 1 = mostly collapsed by default
+    const formatter = new JSONFormatter(obj, Infinity, {
+      hoverPreviewEnabled: true,
+      hoverPreviewArrayCount: 20,
+      hoverPreviewFieldCount: 20,
+      theme: "dark",
+    });
+    el.jsonTree.appendChild(formatter.render());
+  }
+
+  el.jsonHint.textContent =
+    hintText || "Click a session to load its raw JSON here.";
   el.copyJsonBtn.disabled = !currentJsonText;
   el.clearJsonBtn.disabled = !currentJsonText;
 }

@@ -10,6 +10,14 @@
 
     <!-- Your custom CSS -->
     <link rel="stylesheet" href="./styles.css" />
+
+    <!-- json-formatter-js (collapsible JSON tree) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/json-formatter-js@2.5.23/dist/json-formatter.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/json-formatter-js@2.5.23/dist/json-formatter.umd.js"></script>
+
   </head>
 
   <body class="bg-slate-950 text-slate-100">
@@ -96,8 +104,14 @@
         </div>
 
         <div class="rounded-xl border border-slate-800 bg-slate-950 p-3">
-          <pre id="jsonPre" class="codebox max-h-[420px] overflow-auto text-xs leading-relaxed text-slate-100"></pre>
-        </div>
+        <div
+          id="jsonTree"
+          class="max-h-[420px] overflow-auto text-sm leading-relaxed text-slate-100"
+        ></div>
+
+        <!-- Keep raw JSON text for the Copy button -->
+        <pre id="jsonPre" class="hidden"></pre>
+      </div>
       </section>
     </main>
 
