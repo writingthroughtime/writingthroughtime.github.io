@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PenCapture Explorer</title>
+
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body class="bg-slate-950 text-slate-100">
+    <header class="sticky top-0 z-10 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+        <div>
+          <h1 class="text-xl font-semibold tracking-tight">PenCapture Explorer</h1>
+          <p class="text-sm text-slate-400">
+            Browse experiments, subjects, and sessions via Supabase Edge Functions
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <label class="flex select-none items-center gap-2 text-sm text-slate-300">
+            <input id="includeSamplesToggle" type="checkbox" class="h-4 w-4" />
+            Include samples in JSON
+          </label>
+
+          <button
+            id="refreshBtn"
+            class="rounded-lg bg-slate-800 px-3 py-2 text-sm font-medium text-slate-100 hover:bg-slate-700 active:bg-slate-600"
+            type="button"
+          >
+            Refresh
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="mx-auto grid max-w-6xl gap-6 px-4 py-6 lg:grid-cols-2">
+      <!-- Experiments -->
+      <section class="rounded-2xl border border-slate-800 bg-slate-900/40 p-4 shadow-sm">
+        <div class="mb-4 flex items-center justify-between">
+          <h2 class="text-lg font-semibold">Experiments</h2>
+          <span id="experimentsCount" class="text-xs text-slate-400"></span>
+        </div>
+
+        <div id="experimentsStatus" class="mb-3 hidden rounded-lg border border-slate-800 bg-slate-950 p-3 text-sm"></div>
+
+        <div id="experimentsList" class="space-y-3"></div>
+      </section>
+
+      <!-- Subjects -->
+      <section class="rounded-2xl border border-slate-800 bg-slate-900/40 p-4 shadow-sm">
+        <div class="mb-4 flex items-center justify-between">
+          <h2 class="text-lg font-semibold">Subjects</h2>
+          <span id="subjectsCount" class="text-xs text-slate-400"></span>
+        </div>
+
+        <div id="subjectsStatus" class="mb-3 hidden rounded-lg border border-slate-800 bg-slate-950 p-3 text-sm"></div>
+
+        <div id="subjectsList" class="space-y-3"></div>
+      </section>
+
+      <!-- JSON Viewer -->
+      <section class="lg:col-span-2 rounded-2xl border border-slate-800 bg-slate-900/40 p-4 shadow-sm">
+        <div class="mb-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 class="text-lg font-semibold">Session JSON</h2>
+            <p id="jsonHint" class="text-sm text-slate-400">
+              Click a session to load its raw JSON here.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button
+              id="copyJsonBtn"
+              class="rounded-lg bg-slate-800 px-3 py-2 text-sm font-medium text-slate-100 hover:bg-slate-700 active:bg-slate-600 disabled:opacity-40"
+              type="button"
+              disabled
+            >
+              Copy JSON
+            </button>
+
+            <button
+              id="clearJsonBtn"
+              class="rounded-lg border border-slate-700 bg-transparent px-3 py-2 text-sm font-medium text-slate-200 hover:bg-slate-800 active:bg-slate-700 disabled:opacity-40"
+              type="button"
+              disabled
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-slate-800 bg-slate-950 p-3">
+          <pre id="jsonPre" class="codebox max-h-[420px] overflow-auto text-xs leading-relaxed text-slate-100"></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mx-auto max-w-6xl px-4 pb-10 text-xs text-slate-500">
+      <p>
+        Built for GH Pages. Data is fetched live from your public Supabase Edge Functions.
+      </p>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
