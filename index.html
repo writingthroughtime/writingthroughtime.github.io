@@ -3,57 +3,239 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PenCapture</title>
+    <title>Writing Through Time - PenCapture</title>
 
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body class="bg-slate-950 text-slate-100">
-    <main class="mx-auto max-w-3xl px-6 py-16">
-      <header class="mb-12">
-        <h1 class="text-3xl font-semibold tracking-tight">Writing Through Time</h1>
-        <p class="mt-4 text-lg text-slate-300">
-          David, this is a vibe-coded placeholder. Replace it with the real site about us. Keep a link to the data explorer in the new version please.
-        </p>
+    <!-- Navigation Tabs -->
+    <nav class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="flex items-center gap-8 py-4">
+          <div class="flex items-center gap-3">
+            <img src="graphics/Papyrus%20Logo%20(Reduced).png" alt="Papyrus Logo" class="h-8 w-8 object-contain">
+            <a href="/" class="text-lg font-semibold text-slate-100 hover:text-slate-200">Writing Through Time</a>
+          </div>
+          <div class="flex gap-6">
+            <a 
+              href="/" 
+              class="tab-link active text-sm font-medium text-slate-300 hover:text-slate-100 pb-2 border-b-2 border-transparent hover:border-slate-600"
+              data-tab="home"
+            >
+              Home
+            </a>
+            <a 
+              href="/data/" 
+              class="tab-link text-sm font-medium text-slate-300 hover:text-slate-100 pb-2 border-b-2 border-transparent hover:border-slate-600"
+              data-tab="data"
+            >
+              Data
+            </a>
+            <a
+              href="#experiments"
+              class="tab-link text-sm font-medium text-slate-300 hover:text-slate-100 pb-2 border-b-2 border-transparent hover:border-slate-600"
+              data-tab="experiments"
+            >
+              Experiments
+            </a>
+            <a 
+              href="#about" 
+              class="tab-link text-sm font-medium text-slate-300 hover:text-slate-100 pb-2 border-b-2 border-transparent hover:border-slate-600"
+              data-tab="about"
+            >
+              About Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-        <h1 class="text-3xl font-semibold tracking-tight">PenCapture</h1>
-        <p class="mt-4 text-lg text-slate-300">
-          PenCapture is a research platform for collecting, storing, and
-          exploring high-resolution pen input data from controlled writing and
-          drawing experiments.
-        </p>
-      </header>
+    <main class="mx-auto max-w-5xl px-6 py-16">
+      <!-- Home Tab Content -->
+      <div id="home-content" class="tab-content">
+        <header class="mb-12">
+          <h1 class="text-4xl font-bold tracking-tight">Writing Through Time</h1>
+          <p class="mt-4 text-lg text-slate-300">
+            Exploring handwriting and writing behavior through time
+          </p>
 
-      <section class="space-y-6 text-slate-300">
-        <p>
-          The project is designed to support experimental research on handwriting,
-          drawing behavior, motor control, and script production across different
-          writing systems and task designs.
-        </p>
+          <h2 class="mt-8 text-3xl font-semibold tracking-tight">PenCapture</h2>
+          <p class="mt-4 text-lg text-slate-300">
+            PenCapture is a research platform for collecting, storing, and
+            exploring high-resolution pen input data from controlled writing and
+            drawing experiments.
+          </p>
+        </header>
 
-        <p>
-          Data is collected via a custom iOS application and stored using a
-          Supabase-backed infrastructure. Public-facing API endpoints allow
-          read-only access to anonymized experimental data for inspection,
-          debugging, and analysis.
-        </p>
-      </section>
+        <section class="space-y-6 text-slate-300">
+          <p>
+            The project is designed to support experimental research on handwriting,
+            drawing behavior, motor control, and script production across different
+            writing systems and task designs.
+          </p>
 
-      <section class="mt-12 rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
-        <h2 class="text-xl font-semibold">Explore the data</h2>
-        <p class="mt-3 text-slate-300">
-          A lightweight, client-side explorer is available for browsing
-          experiments, subjects, and sessions directly in the browser.
-        </p>
+          <p>
+            Data is collected via a custom iOS application and stored using a
+            Supabase-backed infrastructure. Public-facing API endpoints allow
+            read-only access to anonymized experimental data for inspection,
+            debugging, and analysis.
+          </p>
+        </section>
 
-        <a
-          href="/data/"
-          class="mt-6 inline-flex items-center gap-2 rounded-lg bg-slate-800 px-4 py-3 text-sm font-medium text-slate-100 hover:bg-slate-700 active:bg-slate-600"
-        >
-          Open data explorer →
-        </a>
-      </section>
+        <section class="mt-12 rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+          <h2 class="text-xl font-semibold">PenCapture is designed for</h2>
+          <ul class="mt-4 space-y-3 text-slate-300">
+            <li class="flex gap-2">
+              <span class="text-slate-400">•</span>
+              <span>Experimental research on handwriting, drawing behavior, and motor control</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-slate-400">•</span>
+              <span>Analysis of script production across different writing systems</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-slate-400">•</span>
+              <span>High-resolution pen input data collection via iOS applications</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-slate-400">•</span>
+              <span>Secure storage and public-facing API access for research purposes</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Experiments Tab Content -->
+      <div id="experiments-content" class="tab-content hidden">
+        <header class="mb-8">
+          <h1 class="text-3xl font-bold tracking-tight">Experiments</h1>
+          <p class="mt-3 text-slate-300">Detailed descriptions of experimental designs and objectives.</p>
+        </header>
+
+        <section class="space-y-6 text-slate-300">
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+            <h2 class="text-xl font-semibold mb-2">Experiment A: Discrete Shape Drawing</h2>
+            <p>Participants draw individual signs sequentially; we record kinematic and geometric parameters for each sign.</p>
+
+            <div class="mt-4 grid gap-4">
+              <div>
+                <h3 class="font-semibold">A1. Simple Lines</h3>
+                <p class="text-sm text-slate-300">Draw straight lines at multiple orientations and directions (left-to-right, right-to-left) to capture directional effects.</p>
+              </div>
+
+              <div>
+                <h3 class="font-semibold">A2. VUƔ</h3>
+                <p class="text-sm text-slate-300">Three fundamental corner types are tested: sharp (V), rounded (U), and loop-like (Ɣ). Each is presented in several orientations to sample local geometry.</p>
+              </div>
+
+              <div>
+                <h3 class="font-semibold">A3. ΔZΔC</h3>
+                <p class="text-sm text-slate-300">Compose shapes from two or more corner primitives using four fixed anchor points (square vertices). Trajectories move point-to-point, sometimes along diagonals; corner types are used at direction changes (e.g., Z = two sharp corners, S = two rounded corners).</p>
+              </div>
+
+              <div>
+                <h3 class="font-semibold">A4. Multi-Pulse Shapes</h3>
+                <p class="text-sm text-slate-300">Shapes composed of four movement pulses test whether production can be modeled as a second-order Markov process, motivating analysis of third-order shape compositions.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+            <h2 class="text-xl font-semibold mb-2">Experiment B: Continuous Shape Repetition</h2>
+            <p class="text-sm text-slate-300">Participants repeatedly draw a reference shape (circle, square, or rectangle) without stopping to examine how velocity and geometry change over repeats and whether drift occurs.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+            <h2 class="text-xl font-semibold mb-2">Experiment C: Corner Angle Transition</h2>
+            <p class="text-sm text-slate-300">Variants of V-shaped trajectories with progressively increasing corner angles to identify the angle where production transitions from sharp to rounded or looped corners.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+            <h2 class="text-xl font-semibold mb-2">Experiment D: Bounded Region Off-Shot Correction</h2>
+            <p class="text-sm text-slate-300">Participants draw within a constrained area; occasional deviations are introduced to study compensatory corrective movements.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+            <h2 class="text-xl font-semibold mb-2">Experiment E: Broken Telephone</h2>
+            <p class="text-sm text-slate-300">Sequential reproduction: drawings are passed between participant groups to simulate evolutionary changes in shapes across iterations, compared with historical form changes.</p>
+          </div>
+
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+            <h2 class="text-xl font-semibold mb-2">Experiment F: Eye Tracking</h2>
+            <p class="text-sm text-slate-300">Participants write a sentence while eye movements are recorded to examine gaze patterns during writing production.</p>
+          </div>
+
+          <div class="text-xs text-slate-400 mt-4">
+            <p>[a] ΔZΔC refers to shapes that can look like: ◸ Z ◹ ⊐</p>
+            <p>[b] Details for multi-pulse shapes (which shapes, stroke decomposition) are to be decided.</p>
+            <p>[c] Bounded region correction method still under development.</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- About Us Tab Content -->
+      <div id="about-content" class="tab-content hidden">
+        <header class="mb-12">
+          <h1 class="text-4xl font-bold tracking-tight">About Us</h1>
+        </header>
+
+        <section class="space-y-8 text-slate-300">
+          <div>
+            <h2 class="text-2xl font-semibold text-slate-100 mb-3">Project Overview</h2>
+            <p>
+              Writing Through Time is an academic research project that combines handwriting analysis 
+              with temporal dynamics to understand how writing behavior evolves and varies across different 
+              contexts and writing systems.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-semibold text-slate-100 mb-3">Research Focus</h2>
+            <p>
+              Our research explores fundamental questions about handwriting, motor control, and the 
+              cognitive processes underlying writing production. We combine traditional handwriting analysis 
+              with modern data collection techniques to create a comprehensive understanding of writing behavior.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-semibold text-slate-100 mb-3">Technology</h2>
+            <p>
+              PenCapture uses advanced iOS technology to capture high-resolution pen input data with precise 
+              temporal information. This data is securely stored and made available through a public API for 
+              research purposes.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl font-semibold text-slate-100 mb-3">Team</h2>
+            <p>
+              This project is led by a dedicated team of researchers passionate about understanding the 
+              complexities of human handwriting and writing behavior.
+            </p>
+          </div>
+
+          <div class="mt-8 rounded-2xl border border-slate-800 bg-slate-900/40 p-6">
+            <h3 class="text-lg font-semibold mb-3">Get Involved</h3>
+            <p class="text-slate-300">
+              We're always interested in collaborations and research partnerships. If you have questions 
+              about the project or would like to discuss potential collaborations, please reach out!
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- University Logos Footer -->
+      <div class="mt-12 pt-8 border-t border-slate-800">
+        <p class="text-sm text-slate-400 mb-6">Supported by:</p>
+        <div class="flex items-center gap-8 flex-wrap">
+          <img src="graphics/fub_logo.png" alt="Free University of Berlin" class="h-12 object-contain opacity-80 hover:opacity-100 transition-opacity">
+          <img src="graphics/huji_logo.png" alt="Hebrew University of Jerusalem" class="h-12 object-contain opacity-80 hover:opacity-100 transition-opacity">
+        </div>
+      </div>
 
       <footer class="mt-16 text-sm text-slate-500">
         <p>
@@ -62,5 +244,57 @@
         </p>
       </footer>
     </main>
+
+    <script>
+      // Unified tab handling: openTab, clicks, and hash-based loading
+      function openTab(tabName) {
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.tab-link').forEach(t => {
+          t.classList.remove('active');
+          t.classList.remove('border-slate-100');
+          t.classList.add('border-transparent');
+        });
+
+        const content = document.getElementById(`${tabName}-content`);
+        if (content) content.classList.remove('hidden');
+
+        const link = document.querySelector(`.tab-link[data-tab="${tabName}"]`);
+        if (link) {
+          link.classList.add('active');
+          link.classList.add('border-slate-100');
+          link.classList.remove('border-transparent');
+        }
+      }
+
+      document.querySelectorAll('.tab-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          if (link.dataset.tab === 'data') {
+            // Fade out before navigating to data page
+            document.querySelector('main').style.opacity = '0.7';
+            document.querySelector('main').style.transition = 'opacity 0.3s ease';
+            setTimeout(() => {
+              window.location.href = '/data/';
+            }, 150);
+            return;
+          }
+          e.preventDefault();
+          const tab = link.dataset.tab || 'home';
+          history.replaceState(null, '', `/#${tab}`);
+          openTab(tab);
+        });
+      });
+
+      window.addEventListener('load', () => {
+        const isData = window.location.pathname.includes('/data/');
+        if (isData) {
+          const dataLink = document.querySelector('.tab-link[data-tab="data"]');
+          if (dataLink) dataLink.classList.add('border-slate-100');
+          return;
+        }
+        const hash = (location.hash || '').replace('#', '');
+        if (hash) openTab(hash);
+        else openTab('home');
+      });
+    </script>
   </body>
 </html>

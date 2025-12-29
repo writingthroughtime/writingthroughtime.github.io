@@ -1,0 +1,55 @@
+﻿Experiments Design:
+
+
+Experiment A: Discrete Shape Drawing
+In this experiment, participants will be asked to draw individual signs sequentially. For each sign, kinematic and geometric parameters will be recorded.
+
+
+A1. Simple Lines
+In this sub-experiment, participants will draw simple straight lines at different orientations, including left-to-right and right-to-left directions.
+
+
+A2. VUƔ: 
+Participants will draw shapes corresponding to three fundamental corner types: a sharp corner, a rounded corner, and a loop-like corner. These shapes are denoted as V, U, and Ɣ, respectively. Each shape will be presented sequentially in four different orientations. 
+
+
+A3.ΔZΔC:
+In this sub-experiment, participants will be asked to draw shapes composed of two or more corner primitives.
+Four fixed points defining the vertices of a square will be used as anchor points. Shapes will be constructed by moving from point to point, including movements along the diagonals.
+At each change in direction, the local geometry will correspond to one of the corner types (V, U, or Ɣ).
+For example, a “Z”-shaped trajectory corresponds to the composition of two sharp corners, while an “S”-shaped trajectory corresponds to the composition of two rounded corners.[a]
+
+
+A4. Multi-Pulse Shapes 
+Participants will be asked to draw shapes composed of four movement pulses.
+The goal of this sub-experiment is to test the hypothesis that handwriting production can be modeled as a second-order Markov process. If supported, this would justify restricting further analysis to third-order shape compositions.[b]
+
+
+Experiment B: Continuous Shape Repetition
+In this experiment, participants will be shown a reference shape (a circle, a square, or a rectangle) and will be asked to repeatedly draw the same shape without stopping.
+The objective is to examine how drawing velocity and shape geometry evolve over repeated executions, and whether participants gradually deviate from the reference pattern.
+
+
+Experiment C: Corner Angle Transition
+Participants will be asked to draw several variants of “V”-shaped trajectories with progressively increasing corner angles.
+The aim is to identify the angle at which participants transition from producing a sharp corner to producing a rounded or looped corner.
+
+
+
+
+Experiment D: Bounded Region Off-Shot Correction
+This experiment examines how participants correct drawing errors within a bounded region.
+Participants will be instructed to draw within a constrained area, and occasional deviations (“off-shots”) will be introduced. The analysis will focus on compensatory behavior, testing the hypothesis that deviations are followed by corrective movements. [c]
+
+
+Experiment E: Broken Telephone
+This experiment aims to mimic the evolutionary process of writing. The first group of participants will be given ancient letters and asked to reproduce them. Their drawings will then be passed on to the next group of participants, and so on. We aim to examine how the shapes change at each stage and to compare these changes with the historical evolution of written forms.
+
+
+Experiment F: Eye Tracking
+In this experiment, participants will be given a simple sentence to write, and their eye movements will be tracked during the writing process. We aim to examine where writers look while writing.
+
+
+[a]I've named this ΔZΔC because the possible basic shapes look like: ◸ Z ◹ ⊐
+[b]Need to decide how this works. Are we just giving them shapes that require four strokes? Which shapes?
+[c]Not sure how to make this one yet
