@@ -131,11 +131,11 @@
             </p>
 
             <div class="card-actions">
-              <a href="https://apps.apple.com/de/app/pen-capture/id6757118665?l=en-GB" class="button-link">
+              <a href="https://apps.apple.com/de/app/pen-capture/id6757118665?l=en-GB" class="button-link" target="_blank" rel="noopener">
                 Download app
               </a>
 
-              <a href="./data/" class="text-link">
+              <a href="./data/" class="text-link" target="_blank" rel="noopener">
                 View dataset
               </a>
             </div>
@@ -156,24 +156,38 @@
           The project engages a wide range of academic and applied communities through workshops and presentations, connecting research on handwriting with fields such as cognitive science, mathematics, and cultural history.
         </p>
 
-        <div class="content-grid">
-          <article class="info-block">
-            <h3>Scientific exchange</h3>
-            <p>
-              Collaboration with researchers in handwriting physics, kinematic theory, and computational modeling to refine the project’s analytical framework.
+        <div class="content-grid presentations-grid">
+          <article class="info-block presentation-card">
+            <p class="presentation-type">Talk</p>
+            <h3>The Principles of Handwritten Script Evolution</h3>
+
+            <dl class="presentation-meta">
+              <div>
+                <dt>Meeting</dt>
+                <dd>VolkswagenStiftung Open Up Kickoff</dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>Hannover</dd>
+              </div>
+              <div>
+                <dt>Date</dt>
+                <dd>March 2026</dd>
+              </div>
+            </dl>
+
+            <p class="presentation-summary">
+              Introductory presentation on the project’s central research questions, methods, and broader significance.
             </p>
-          </article>
-          <article class="info-block">
-            <h3>Interdisciplinary dialogue</h3>
-            <p>
-              Engagement with linguists, historians, philologists, and evolutionary theorists to integrate cultural and linguistic perspectives into quantitative models.
-            </p>
-          </article>
-          <article class="info-block">
-            <h3>Applied perspectives</h3>
-            <p>
-              Connections with forensic handwriting analysis and digital text recognition research, exploring applications beyond historical scholarship.
-            </p>
+
+            <div class="card-actions">
+              <a href="https://www.youtube.com/watch?v=f1D2Z4eJh-Q" class="button-link" target="_blank" rel="noopener">
+                Watch video
+              </a>
+              <!-- <a href="./presentations/vw-open-up-2026/" class="text-link">
+                View details
+              </a> -->
+            </div>
           </article>
         </div>
       </div>
@@ -184,17 +198,75 @@
     </section>
 
     <section class="panel-section" id="contact">
-      <div class="panel-card">
-        <h2>Get in touch</h2>
+    <div class="panel-card">
+      <p class="section-kicker">Contact</p>
+      <h2>Get in touch</h2>
+      <p>
+        Questions, collaboration ideas, invitations, and project-related inquiries are welcome.
+      </p>
 
-        <div class="contact-list">
-          <p><strong>Email:</strong> <a href="mailto:writingthroughtimeproject@gmail.com">writingthroughtimeproject@gmail.com</a></p>
-          <p><strong>Institutions:</strong> FU Berlin • Hebrew University, Jerusalem</p>
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="contact_name">Name</label>
+            <input
+              type="text"
+              id="contact_name"
+              name="name"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="contact_email">Email</label>
+            <input
+              type="email"
+              id="contact_email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+          </div>
         </div>
-      </div>
-    </section>
+
+        <div class="form-field">
+          <label for="contact_subject">Subject</label>
+          <input
+            type="text"
+            id="contact_subject"
+            name="subject"
+            required
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="contact_message">Message</label>
+          <textarea
+            id="contact_message"
+            name="message"
+            rows="7"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Optional hidden fields -->
+        <input type="hidden" name="project_name" value="Writing Through Time" />
+        <input type="hidden" name="to_email" value="writingthroughtimeproject@gmail.com" />
+
+        <div class="card-actions">
+          <button type="submit" class="button-link form-submit">
+            Send message
+          </button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </section>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="./scripts/contact-form.js"></script>
   <script src="./scripts/script.js"></script>
 </body>
 </html>
