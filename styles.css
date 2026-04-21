@@ -442,19 +442,31 @@ a {
 .figure-block {
   margin: 3rem auto;
   max-width: 900px;
-  padding: 0;
-  border: none;
-  background: none;
+
+  padding: 1.5rem 1.5rem 1.2rem 1.5rem;
+
+  background: #f4efe6; /* warm paper tone, not pure white */
+  border-radius: 6px;
+
+  border: 1px solid rgba(0,0,0,0.15);
+
+  /* subtle lift off the dark background */
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.45),
+    0 0 0 1px rgba(255,255,255,0.04) inset;
 }
 
 .figure-block img {
   width: 100%;
+  display: block;
 }
 
+/* caption now lives on the light surface */
 .figure-block figcaption {
-  margin-top: 0.6rem;
-  font-size: 0.8rem;
-  color: rgba(241, 237, 228, 0.65);
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: rgba(0,0,0,0.7);
   text-align: left;
 }
 
