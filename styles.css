@@ -42,6 +42,9 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.55;
   overflow-x: hidden;
+  text-shadow:
+    0 1px 2px rgba(0,0,0,0.4),
+    0 0 4px rgba(255,255,255,0.4);
 }
 
 body::before {
@@ -407,6 +410,33 @@ a {
   margin-bottom: 0.55rem;
   font-family: "PlantinStdBold", Georgia, serif;
   font-size: 1.15rem;
+}
+
+.card-actions {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.text-link {
+  font-size: 0.95rem;
+  color: var(--muted);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding-bottom: 2px;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.text-link:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.button-secondary {
+  border: 1px solid var(--line-soft);
+  background: transparent;
+  color: var(--muted);
 }
 
 .contact-list {
