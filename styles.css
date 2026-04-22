@@ -604,11 +604,11 @@ a {
   resize: vertical;
 }
 
-.form-submit {
+/* .form-submit {
   font-family: "PlantinStdBold", Georgia, serif;
   font-size: 0.98rem;
   cursor: pointer;
-}
+} */
 
 .form-submit:disabled {
   opacity: 0.6;
