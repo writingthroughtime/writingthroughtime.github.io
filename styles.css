@@ -447,6 +447,15 @@ a {
    Team cards
 ========================================= */
 
+.person-role {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.9;
+}
+
 .person-photo {
   width: 100%;
   aspect-ratio: 1 / 1;
